@@ -62,15 +62,21 @@ function ensureVideo(slide) {
   if (!src) return null;
   let main = slide.querySelector('video.main');
   if (!main) {
-    if (slide.dataset.fit === 'contain') slide.appendChild(makeVideo(src, 'bg'));
+    // El fondo desenfocado se oculta en pantallas angostas (ver CSS): no se crea para no duplicar la carga en el celular
+    if (slide.dataset.fit === 'contain' && !matchMedia('(max-width: 760px)').matches) slide.appendChild(makeVideo(src, 'bg'));
     main = makeVideo(src, 'main');
     slide.appendChild(main);
   }
   return main;
 }
+// Arranca el video recién cuando tiene metadatos: en el celular saltar de segundo antes de eso se ignora y el play falla
+function startVideo(v, from) {
+  const go = () => { v.currentTime = from; v.play().catch(() => {}); };
+  if (v.readyState >= 1) go(); else v.addEventListener('loadedmetadata', go, { once: true });
+}
 const playAll = (slide, on) => slide.querySelectorAll('video').forEach(v => {
   // data-start: segundo desde el que arranca el video de la escena (por defecto 0)
-  if (on) { v.currentTime = Number(slide.dataset.start) || 0; v.play().catch(() => {}); } else v.pause();
+  if (on) startVideo(v, Number(slide.dataset.start) || 0); else v.pause();
 });
 
 function show(i) {
