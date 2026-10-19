@@ -217,11 +217,11 @@ details li { margin-bottom: .35em; }
 
 /* Vínculo con China: placa y foto lado a lado con el mismo alto, y viajes en una franja ancha */
 .callout { border-left: 3px solid var(--accent); padding-left: 1rem; margin-top: 1.2rem; }
-.china-media { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); margin-bottom: clamp(32px, 5vw, 56px); }
-.china-media .plaque { margin: 0; }
-.china-media .plaque a { aspect-ratio: 4 / 3; }
-.china-media .plaque img { height: 100%; object-fit: cover; }
-.china-media .plaque:last-child img { object-position: 50% 35%; }
+/* Sin recortar: cada figura ocupa un ancho proporcional a su formato (placa 1,434 / foto 1,177), así las dos quedan del mismo alto */
+.china-media { display: flex; gap: clamp(20px, 3vw, 40px); align-items: flex-start; margin-bottom: clamp(32px, 5vw, 56px); }
+.china-media .plaque { margin: 0; min-width: 0; }
+.china-media .plaque:first-child { flex: 1434 1 0; }
+.china-media .plaque:last-child { flex: 1177 1 0; }
 .trips { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
 .trips h3, .trips h4 { margin-top: 0; }
 .trips .timeline { margin-bottom: 0; }
@@ -307,7 +307,9 @@ details li { margin-bottom: .35em; }
   .person { flex: none; height: 300px; transition: height .6s var(--ease), box-shadow .4s; }
   .person.active { height: 540px; }
   .people.has-active .person:not(.active) { opacity: 1; pointer-events: auto; }
-  .split, .style, .china-media, .trips { grid-template-columns: 1fr; }
+  .split, .style, .trips { grid-template-columns: 1fr; }
+  .china-media { flex-direction: column; }
+  .china-media .plaque:first-child, .china-media .plaque:last-child { flex: none; width: 100%; }
   .style.reverse .style-img { order: 0; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
 }
