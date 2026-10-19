@@ -215,6 +215,17 @@ details li { margin-bottom: .35em; }
 .plaque figcaption { margin-top: .9rem; font-size: .88rem; color: var(--muted); line-height: 1.55; }
 .plaque figcaption strong { color: var(--heading); }
 
+/* Vínculo con China: placa y foto lado a lado con el mismo alto, y viajes en una franja ancha */
+.callout { border-left: 3px solid var(--accent); padding-left: 1rem; margin-top: 1.2rem; }
+.china-media { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); margin-bottom: clamp(32px, 5vw, 56px); }
+.china-media .plaque { margin: 0; }
+.china-media .plaque a { aspect-ratio: 4 / 3; }
+.china-media .plaque img { height: 100%; object-fit: cover; }
+.china-media .plaque:last-child img { object-position: 50% 35%; }
+.trips { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
+.trips h3, .trips h4 { margin-top: 0; }
+.trips .timeline { margin-bottom: 0; }
+
 /* Personas: tres tarjetas con foto; la elegida se expande al ancho total (clase .active la pone main.js).
    Las otras colapsan a ancho 0 con flex-grow, así la animación es continua. */
 .people { display: flex; gap: 20px; height: clamp(460px, 62vh, 560px); transition: gap .6s var(--ease); }
@@ -296,7 +307,7 @@ details li { margin-bottom: .35em; }
   .person { flex: none; height: 300px; transition: height .6s var(--ease), box-shadow .4s; }
   .person.active { height: 540px; }
   .people.has-active .person:not(.active) { opacity: 1; pointer-events: auto; }
-  .split, .style { grid-template-columns: 1fr; }
+  .split, .style, .china-media, .trips { grid-template-columns: 1fr; }
   .style.reverse .style-img { order: 0; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
 }
