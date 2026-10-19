@@ -263,7 +263,7 @@ details li { margin-bottom: .35em; }
 .fab:hover { background: var(--accent-hover); transform: translateY(-3px); }
 .fab svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 @media (max-width: 480px) { .fab { right: 12px; left: 12px; justify-content: center; bottom: 14px; } }
-.credit { font-weight: 700; color: var(--heading); letter-spacing: .04em; }
+.credit { font-weight: 400; color: var(--heading); letter-spacing: .04em; }
 .sep { margin: 0 .35em; opacity: .6; }
 /* Con 4 tarjetas el nombre largo ("Formación de instructores") necesita un poco menos de tamaño */
 #clases .pname { font-size: 1.2rem; }
@@ -276,7 +276,7 @@ details li { margin-bottom: .35em; }
 .footer-brand img { border-radius: 50%; background: #fff; }
 .social { display: flex; gap: 12px; justify-self: center; }
 .footer-dresco { justify-self: end; line-height: 0; }
-.footer-dresco img { height: 52px; width: auto; border-radius: 10px; }
+.footer-dresco img { height: 48px; width: auto; }
 .social a { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid var(--line); color: var(--text); transition: transform .25s var(--ease), background .25s, color .25s, border-color .25s; }
 .social a:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); transform: translateY(-3px); }
 .social svg { width: 20px; height: 20px; fill: currentColor; }
