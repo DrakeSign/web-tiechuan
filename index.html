@@ -48,17 +48,20 @@
 
 <main>
 
-  <!-- 1. INICIO: banner que rota cada 5 segundos.
+  <!-- 1. INICIO: banner que rota cada 4 segundos.
        Cada .hero-slide es una escena. Para usar video, agregá data-video="img/escena.mp4"
        (el --poster es la foto que se ve mientras carga y si el video no puede reproducirse).
+       Los videos ya vienen recortados a 4 s (el tramo elegido), así que arrancan desde el principio.
        Se pueden sumar o quitar escenas libremente: copiá un bloque .hero-slide y su botón de puntos. -->
   <section class="hero" id="inicio">
     <div class="hero-slides" aria-hidden="true">
       <!-- data-fit="contain": video vertical, se ve completo sobre un fondo desenfocado. data-ms: duración de la escena -->
-      <div class="hero-slide active" style="--poster:url('img/tiechuan_imagen_estilo_yip_man_foshan_ving_tsun_slide.jpg')" data-video="img/banner-1.mp4" data-fit="contain" data-ms="6000"></div>
-      <div class="hero-slide" style="--poster:url('img/tiechuan_imagen_shaolin_slide.jpg')" data-video="img/banner-2.mp4" data-fit="contain" data-start="3" data-ms="8000"></div>
-      <div class="hero-slide" style="--poster:url('img/tiechuan_imagen_qigong_slide.jpg')" data-video="img/banner-3.mp4" data-fit="contain" data-start="3" data-ms="8000"></div>
-      <div class="hero-slide" style="--poster:url('img/tiechuan_imagen_shaolin_slide.jpg')" data-video="img/banner-4.mp4" data-fit="contain" data-start="3" data-ms="8000"></div>
+      <div class="hero-slide active" style="--poster:url('img/hero-1.jpg')" data-video="img/hero-1.mp4" data-fit="contain" data-ms="4000"></div><!-- pasto -->
+      <div class="hero-slide" style="--poster:url('img/hero-2.jpg')" data-video="img/hero-2.mp4" data-fit="contain" data-ms="4000"></div><!-- guanteo -->
+      <div class="hero-slide" style="--poster:url('img/hero-3.jpg')" data-video="img/hero-3.mp4" data-fit="contain" data-ms="4000"></div><!-- muñeco -->
+      <div class="hero-slide" style="--poster:url('img/hero-4.jpg')" data-video="img/hero-4.mp4" data-fit="contain" data-ms="4000"></div><!-- qigong -->
+      <div class="hero-slide" style="--poster:url('img/hero-5.jpg')" data-video="img/hero-5.mp4" data-fit="contain" data-ms="4000"></div><!-- Sigung Guo, certificación -->
+      <div class="hero-slide" style="--poster:url('img/hero-6.jpg')" data-video="img/hero-6.mp4" data-fit="contain" data-ms="4000"></div><!-- tatami rojo -->
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-inner">
@@ -75,6 +78,8 @@
       <button type="button" aria-label="Escena 2"></button>
       <button type="button" aria-label="Escena 3"></button>
       <button type="button" aria-label="Escena 4"></button>
+      <button type="button" aria-label="Escena 5"></button>
+      <button type="button" aria-label="Escena 6"></button>
     </div>
   </section>
 
@@ -106,10 +111,10 @@
             <summary>Ver más</summary>
             <h4>Características</h4>
             <ul>
-              <li>Golpes explosivos en línea recta (<em>chain punching</em>).</li>
+              <li>Golpes explosivos en continuidad desde la relajación.</li>
               <li>Guardia cerrada, con protección del centro.</li>
               <li>Defensa activa: los bloqueos se convierten en ataques.</li>
-              <li>Sensibilidad táctil mediante el <em>Chi Sao</em>.</li>
+              <li>Desarrollo de la reacción desde el clinch mediante <em>Chi Sao</em>.</li>
               <li>Estructura por sobre la fuerza.</li>
             </ul>
             <h4>Linaje</h4>
@@ -219,12 +224,12 @@
             <div class="person-shade"></div>
             <div class="person-label">
               <strong class="pname">Formación de instructores</strong>
-              <p class="role">Requisito: 3 años de práctica constante</p>
+              <p class="role">Con examen de ingreso</p>
               <span class="person-more" aria-hidden="true">Ver más +</span>
             </div>
             <div class="person-detail">
               <h3>Formación de instructores</h3>
-              <p class="role">Requisito: 3 años de práctica constante</p>
+              <p class="role">Con examen de ingreso</p>
               <p>Certificación en enseñanza de Kung Fu tradicional y Qi Gong: dominio técnico, pedagogía y prácticas supervisadas, con apoyo para abrir tu propio grupo.</p>
             </div>
           </article>
