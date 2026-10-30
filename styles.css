@@ -267,6 +267,12 @@ details li { margin-bottom: .35em; }
 .sep { margin: 0 .35em; opacity: .6; }
 /* Con 4 tarjetas el nombre largo ("Formación de instructores") necesita un poco menos de tamaño */
 #clases .pname { font-size: 1.2rem; }
+/* Tarjetas lado a lado: todas las etiquetas con la misma altura, así la línea y el título quedan a la misma
+   altura aunque el texto ocupe 1 o 2 renglones; "Ver más" se apoya abajo */
+@media (min-width: 961px) {
+  #clases .person-label { display: flex; flex-direction: column; align-items: flex-start; min-height: 13rem; }
+  #clases .person-more { margin-top: auto; padding-top: 12px; }
+}
 .quote { font-weight: 300; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.35; text-align: center; max-width: 24em; margin: 4rem auto 0; color: var(--heading); }
 
 /* Pie */
