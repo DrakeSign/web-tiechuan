@@ -257,6 +257,14 @@ details li { margin-bottom: .35em; }
 /* Nosotros: texto a la izquierda, Sifu a la derecha. La 2.ª columna = ancho de 1 de 3 tarjetas (gap 20px) */
 .nosotros-head { display: grid; grid-template-columns: 1fr calc((100% - 40px) / 3); gap: 20px clamp(24px, 4vw, 56px); align-items: center; margin-bottom: clamp(40px, 6vw, 72px); }
 .nosotros-head .section-head { margin-bottom: 0; }
+/* Sifu: la tarjeta flota sobre su columna (que solo reserva el lugar); al abrirse crece hacia la izquierda
+   hasta el ancho total y el texto se desvanece debajo, sin reacomodarse */
+.nosotros-head { position: relative; }
+.nosotros-head > div.reveal { min-height: clamp(460px, 62vh, 560px); }
+.people-solo { position: absolute; top: 0; right: 0; bottom: 0; height: auto; width: calc((100% - 40px) / 3); z-index: 1; transition: width .7s var(--ease); }
+.people-solo.has-active { width: 100%; }
+.nosotros-head .section-head { transition: opacity .4s; }
+.nosotros-head:has(.people-solo.has-active) .section-head { opacity: 0; }
 .subhead { font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 1.4rem; }
 /* Botón flotante de consulta: oculto sobre el banner, visible en el resto de la página */
 .fab { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px;
@@ -323,6 +331,9 @@ details li { margin-bottom: .35em; }
   .person.active { height: 540px; }
   .people.has-active .person:not(.active) { opacity: 1; pointer-events: auto; }
   .split, .style, .trips, .nosotros-head { grid-template-columns: 1fr; }
+  .people-solo, .people-solo.has-active { position: static; width: auto; }
+  .nosotros-head > div.reveal { min-height: 0; }
+  .nosotros-head:has(.people-solo.has-active) .section-head { opacity: 1; }
   .style.reverse .style-img { order: 0; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
 }
