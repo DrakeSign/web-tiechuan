@@ -286,7 +286,12 @@ details li { margin-bottom: .35em; }
   #clases .person-label, #nosotros .person-label { display: flex; flex-direction: column; align-items: flex-start; min-height: 13rem; }
   #clases .person-more, #nosotros .person-more { margin-top: auto; padding-top: 12px; }
 }
-.quote { font-weight: 300; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.35; text-align: center; max-width: 24em; margin: 4rem auto 0; color: var(--heading); }
+/* Frase de cierre: entre dos líneas finas, con una marca de color centrada arriba y abajo */
+.quote { position: relative; font-weight: 300; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.35; text-align: center; max-width: 24em; margin: clamp(56px, 8vw, 88px) auto 0;
+  padding: clamp(28px, 4vw, 40px) 1rem; border-block: 1px solid var(--line); color: var(--heading); text-wrap: balance; }
+.quote::before, .quote::after { content: ""; position: absolute; left: 50%; width: 56px; height: 3px; background: var(--accent); transform: translateX(-50%); }
+.quote::before { top: -2px; }
+.quote::after { bottom: -2px; }
 
 /* Pie */
 .site-footer { border-top: 1px solid var(--line); padding: 44px 0 32px; color: var(--muted); font-size: .88rem; }
