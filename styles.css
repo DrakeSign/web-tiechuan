@@ -241,6 +241,7 @@ details li { margin-bottom: .35em; }
 /* Estado cerrado: nombre y título abajo */
 .person-label { position: absolute; inset: auto 0 0 0; padding: 26px 28px; transition: opacity .3s, transform .5s var(--ease); }
 .person-label::before { content: ""; display: block; width: 36px; height: 3px; background: var(--accent); margin-bottom: 12px; }
+.pcargo { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .75); margin-bottom: .35em; }
 .pname { display: block; font-weight: 900; font-size: 1.35rem; line-height: 1.15; margin-bottom: .2em; }
 .person-more { display: inline-block; margin-top: 12px; font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
 
@@ -253,6 +254,10 @@ details li { margin-bottom: .35em; }
 .person.active .person-label { opacity: 0; transform: translateY(10px); pointer-events: none; }
 .person.active .person-shade { background: linear-gradient(0deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.62) 55%, rgba(0,0,0,.35) 100%); }
 .people.has-active .person:not(.active) { flex-grow: 0; opacity: 0; pointer-events: none; }
+/* Nosotros: texto a la izquierda, Sifu a la derecha. La 2.ª columna = ancho de 1 de 3 tarjetas (gap 20px) */
+.nosotros-head { display: grid; grid-template-columns: 1fr calc((100% - 40px) / 3); gap: 20px clamp(24px, 4vw, 56px); align-items: center; margin-bottom: clamp(40px, 6vw, 72px); }
+.nosotros-head .section-head { margin-bottom: 0; }
+.subhead { font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 1.4rem; }
 /* Botón flotante de consulta: oculto sobre el banner, visible en el resto de la página */
 .fab { position: fixed; right: 20px; bottom: 20px; z-index: 40; display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px;
   background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: .95rem; text-decoration: none;
@@ -270,8 +275,8 @@ details li { margin-bottom: .35em; }
 /* Tarjetas lado a lado: todas las etiquetas con la misma altura, así la línea y el título quedan a la misma
    altura aunque el texto ocupe 1 o 2 renglones; "Ver más" se apoya abajo */
 @media (min-width: 961px) {
-  #clases .person-label { display: flex; flex-direction: column; align-items: flex-start; min-height: 13rem; }
-  #clases .person-more { margin-top: auto; padding-top: 12px; }
+  #clases .person-label, #nosotros .person-label { display: flex; flex-direction: column; align-items: flex-start; min-height: 13rem; }
+  #clases .person-more, #nosotros .person-more { margin-top: auto; padding-top: 12px; }
 }
 .quote { font-weight: 300; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.35; text-align: center; max-width: 24em; margin: 4rem auto 0; color: var(--heading); }
 
@@ -317,7 +322,7 @@ details li { margin-bottom: .35em; }
   .person { flex: none; height: 300px; transition: height .6s var(--ease), box-shadow .4s; }
   .person.active { height: 540px; }
   .people.has-active .person:not(.active) { opacity: 1; pointer-events: auto; }
-  .split, .style, .trips { grid-template-columns: 1fr; }
+  .split, .style, .trips, .nosotros-head { grid-template-columns: 1fr; }
   .style.reverse .style-img { order: 0; }
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
 }

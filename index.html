@@ -14,7 +14,7 @@
       document.documentElement.dataset.theme = t;
     } catch (e) { document.documentElement.dataset.theme = 'light'; }
   </script>
-  <link rel="stylesheet" href="styles.css?v=20261029a">
+  <link rel="stylesheet" href="styles.css?v=20261031b">
 </head>
 <body>
 
@@ -297,40 +297,53 @@
   <!-- 5. NOSOTROS -->
   <section class="section section-alt" id="nosotros">
     <div class="wrap">
-      <header class="section-head reveal">
-        <p class="eyebrow">Nosotros</p>
-        <h2>Donde vive el Kung Fu tradicional</h2>
-        <p class="section-lead">Fundada en 1998 por Sifu Carlos Reymundo, la academia se dedica a la enseñanza y difusión del Kung Fu tradicional en Argentina y países vecinos. Creemos en la transmisión directa e ininterrumpida de maestro a alumno (Si-To), y formamos a cada persona física, mental y espiritualmente.</p>
-      </header>
+      <!-- Encabezado a la izquierda y Sifu a la derecha. La columna de Sifu mide lo mismo que
+           cada tarjeta de abajo, así queda alineado con la tercera -->
+      <div class="nosotros-head">
+        <header class="section-head reveal">
+          <p class="eyebrow">Nosotros</p>
+          <h2>Donde vive el Kung Fu tradicional</h2>
+          <p class="section-lead">Fundada en 1998 por Sifu Carlos Reymundo, la academia se dedica a la enseñanza y difusión del Kung Fu tradicional en Argentina y países vecinos. Creemos en la transmisión directa e ininterrumpida de maestro a alumno (Si-To), y formamos a cada persona física, mental y espiritualmente.</p>
+        </header>
+        <div class="reveal">
+          <div class="people">
+            <article class="person" tabindex="0" role="button" aria-expanded="false" aria-label="Sifu Carlos Reymundo: ver más" style="--photo:url('img/sifu-reymundo-sentado.jpg'); --pos:62% 15%">
+              <div class="person-bg" role="img" aria-label="Sifu Carlos Reymundo sentado junto a dos cuchillos mariposa de Wing Chun"></div>
+              <div class="person-shade"></div>
+              <div class="person-label">
+                <span class="pcargo">Sifu</span>
+                <strong class="pname">Carlos Reymundo</strong>
+                <p class="role">Director de la academia</p>
+                <span class="person-more" aria-hidden="true">Ver más +</span>
+              </div>
+              <div class="person-detail">
+                <span class="pcargo">Sifu</span>
+                <h3>Carlos Reymundo</h3>
+                <p class="role">Director de la academia</p>
+                <p>Discípulo directo del Maestro Guo Weizhan e introductor del linaje Guo en las Américas. Heredero de la cultura inmaterial de la ciudad de Foshan, nombramiento personal. Instructor de fuerzas de seguridad y formador de profesores.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
 
-      <!-- Tres tarjetas con foto: nombre y título abajo. Al pasar el mouse (o tocar) la elegida se expande
+      <!-- Discípulos: tres tarjetas con foto; al pasar el mouse (o tocar) la elegida se expande
            al ancho total y muestra la descripción. El comportamiento está en main.js -->
+      <h3 class="subhead reveal">Sus discípulos</h3>
       <div class="reveal">
         <div class="people">
-        <article class="person" tabindex="0" role="button" aria-expanded="false" aria-label="Sifu Carlos Reymundo: ver más" style="--photo:url('img/sifu-reymundo-sentado.jpg'); --pos:62% 15%">
-          <div class="person-bg" role="img" aria-label="Sifu Carlos Reymundo sentado junto a dos cuchillos mariposa de Wing Chun"></div>
-          <div class="person-shade"></div>
-          <div class="person-label">
-            <strong class="pname">Sifu Carlos Reymundo</strong>
-            <p class="role">Director de la academia</p>
-            <span class="person-more" aria-hidden="true">Ver más +</span>
-          </div>
-          <div class="person-detail">
-            <h3>Sifu Carlos Reymundo</h3>
-            <p class="role">Director de la academia</p>
-            <p>Discípulo directo del Maestro Guo Weizhan e introductor del linaje Guo en las Américas. Heredero de la cultura inmaterial de la ciudad de Foshan, nombramiento personal. Instructor de fuerzas de seguridad y formador de profesores.</p>
-          </div>
-        </article>
         <article class="person" tabindex="0" role="button" aria-expanded="false" aria-label="Profesor Andrés Sabatini: ver más" style="--photo:url('img/profesor-sabatini.jpg'); --pos:46% 14%">
           <div class="person-bg" role="img" aria-label="Profesor Andrés Sabatini en posición de combate junto a un lago, en un parque de China"></div>
           <div class="person-shade"></div>
           <div class="person-label">
-            <strong class="pname">Profesor Andrés Sabatini</strong>
+            <span class="pcargo">Profesor</span>
+            <strong class="pname">Andrés Sabatini</strong>
             <p class="role">Primer discípulo de Sifu Reymundo</p>
             <span class="person-more" aria-hidden="true">Ver más +</span>
           </div>
           <div class="person-detail">
-            <h3>Profesor Andrés Sabatini</h3>
+            <span class="pcargo">Profesor</span>
+            <h3>Andrés Sabatini</h3>
             <p class="role">Primer discípulo de Sifu Reymundo</p>
             <p>Responsable de la continuidad del Shaolin Norteño y de la transmisión del Wu De en la academia. Profesor registrado en la Foshan Wing Chun Association (A297). Enseña en la sede de Monte Castro.</p>
           </div>
@@ -339,14 +352,32 @@
           <div class="person-bg" role="img" aria-label="Profesor Pablo Guerreiro practicando Wing Chun en un parque de China"></div>
           <div class="person-shade"></div>
           <div class="person-label">
-            <strong class="pname">Profesor Pablo Guerreiro</strong>
+            <span class="pcargo">Profesor</span>
+            <strong class="pname">Pablo Guerreiro</strong>
             <p class="role">Formador de instructores</p>
             <span class="person-more" aria-hidden="true">Ver más +</span>
           </div>
           <div class="person-detail">
-            <h3>Profesor Pablo Guerreiro</h3>
+            <span class="pcargo">Profesor</span>
+            <h3>Pablo Guerreiro</h3>
             <p class="role">Formador de instructores</p>
             <p>Segundo discípulo de Sifu Reymundo e Instructor Oficial de Wing Chun de Foshan. Asistente encargado de la formación de instructores. Profesor registrado en la Foshan Wing Chun Association.</p>
+          </div>
+        </article>
+        <article class="person" tabindex="0" role="button" aria-expanded="false" aria-label="Instructor Nahuel Hernández: ver más" style="--photo:url('img/instructor-hernandez.jpg'); --pos:56% 24%">
+          <div class="person-bg" role="img" aria-label="Instructor Nahuel Hernández en guardia con los dos cuchillos mariposa de Wing Chun, en el salón de la academia"></div>
+          <div class="person-shade"></div>
+          <div class="person-label">
+            <span class="pcargo">Instructor</span>
+            <strong class="pname">Nahuel Hernández</strong>
+            <p class="role">Asistente de Sifu</p>
+            <span class="person-more" aria-hidden="true">Ver más +</span>
+          </div>
+          <div class="person-detail">
+            <span class="pcargo">Instructor</span>
+            <h3>Nahuel Hernández</h3>
+            <p class="role">Asistente de Sifu</p>
+            <p>Tercer discípulo de Sifu Reymundo, desde su ceremonia Bai Shi en 2022. Formado en Shaolin Norteño y en Wing Chun, hoy su disciplina principal. Asiste a Sifu en las clases grupales de la sede central.</p>
           </div>
         </article>
         </div>
